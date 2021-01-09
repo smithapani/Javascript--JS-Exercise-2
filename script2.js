@@ -1,4 +1,9 @@
 /*1
+Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ get​ ​the​ ​ first​ ​ and​ ​ last​ ​ element​ ​ of​ ​ an​ ​ array.
+Passing​ ​ a parameter​ ​ 'n'​ ​ will​ ​ return​ ​ the​ ​ first​ ​ 'n'​ ​ elements​ ​ of​ ​ the​ ​ array​ ​ 
+and​ ​last​ ​ ‘n’​ ​ elements​ ​ of​ ​ the array.
+
+
 let num = +prompt("enter first number of elements : ",'');
 const FRUITS = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 if(num <= FRUITS.length){
@@ -34,6 +39,10 @@ else{
 
 
 /*2
+Write​ ​ a ​ ​ JavaScript​ ​ program​ ​ which​ ​ accepts​ ​ a ​ ​ number​​ as​ ​ input​ ​ and​ ​ insert​ ​ 
+dashes​ ​ (-) between​ ​ each​ ​ two​ ​ even​ ​ numbers.
+
+
 const num=+prompt("Enter the number",'');
 const str = num.toString();
 const result = [];
@@ -63,10 +72,28 @@ alert(result.join(''));
 
 
 /*3
-let array = [0,1,1,2,3,4,5,5,5,6,7,7,8,9];
-for(let i=0;i<array.length;i++){
+Write​ ​ a ​ ​ JavaScript​ ​ program​ ​ to​ ​ find​ ​ the​ ​ most​ ​frequent​ ​ item​ ​ of​ ​ an​ ​ array.
 
+let array = [0,1,1,2,3,4,5,5,5,6,7,7,8,9];
+var count = 1;
+var m = 0;
+var item;
+for (var i=0; i<array.length; i++)
+{
+    for (var j=i; j<array.length; j++)
+    {
+        if (array[i] == array[j])
+            m++;
+            if (count<m)
+            {
+                count=m; 
+                item = array[i];
+            }
+        }
+    m=0;
 }
+alert(item+" ( " +count +" times ) ") ;
+
 */
 
 
@@ -80,6 +107,9 @@ for(let i=0;i<array.length;i++){
 
 
 /*4
+Write​ ​ a ​ ​ JavaScript​ ​ program​ ​ to​ ​ shuffle​ ​ an​ ​array.
+
+
 function shuffle(arr) {
     var len = arr.length;
     var temp, index;
@@ -112,6 +142,11 @@ alert(shuffle(arr));
 */
 
 /*5
+Write​ ​ a ​ ​ JavaScript​ ​ program​ ​ to​ ​ compute​ ​ the​ ​ union​ ​of​ ​ two​ ​ arrays,​ ​ and​ ​ Write​ ​ a ​ ​ JavaScript 
+ function​ ​ to​ ​ find​ ​ the​ ​ difference​ ​ of​ ​ two​ ​ arrays, and intersection of two arrays.
+
+
+
 let arr1 = [0,1,2];
 let arr2 = [2,3,4];
 
@@ -135,6 +170,9 @@ alert("intersec : "+ arr1.filter(x => arr2.includes(x)));
 
 
 /*6
+Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ fill​ ​ an​ ​ array​ ​with​ ​ values​ ​ (either numeric or​ string​ ​ with​ ​ one character)​ ​ on​ ​ supplied​ ​ bounds.
+
+
 let arr = [ "a" , "b" , "c" , "d" , "e" , "f" , "g" , "h" , "i" , "j" , "k" , "l" , "m" , "n" , "o" , "p" , "q" , "r" , "s" , "t" , "u" , "v" , "w" , "x" , "y" , "z" ];
 function num_string(start,end,n){
     let answer = [];
@@ -162,6 +200,9 @@ while(true){
 
 
 /*7
+Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ get​ ​ the​ ​ month​ ​name​ ​ from​ ​ a ​ ​ particular​ ​ date.
+
+
 function monthname(dt){
     monthlist = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     return monthlist[dt.getMonth()];
@@ -177,6 +218,9 @@ alert(monthname(new Date("08/01/2020")));
 
 
 /*8
+Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ get​ ​ difference​ ​between​ ​ two​ ​ dates,​ ​ from​ ​ maximum​ ​ unit​ ​ to minimum​ ​ unit.
+
+
 var today = new Date(01,07,2018)
 var past = new Date(03,05,2020) 
 
@@ -214,6 +258,10 @@ alert(ans);
 
 
 /*9
+Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ convert​ ​ a ​ ​ Unix​ ​timestamp​ ​ to​ ​ time.
+
+
+
 function Unix_timestamp(t)
 {
     var dt = new Date(t*1000);
@@ -238,6 +286,9 @@ alert(Unix_timestamp(1607518718));
 
 
 /*10
+Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ get​ ​ time​ ​differences​ ​ in​ ​ years,​ ​ months,​ ​ weeks,​ ​ days,​ ​ hours and​ ​ minutes​ ​ between​ ​ two​ ​ dates.
+
+
 let d1 = new Date(01,07,2018).getTime();
 let d2 = new Date(03,05,2020).getTime();
 
@@ -304,6 +355,9 @@ function monthsDiff(d1, d2) {
 
 
 /*11
+ Write​ ​ a ​ ​ JavaScript​ ​function​ ​ to​ ​ insert​ ​ a ​ ​ string​ ​ within​ ​ a ​ ​ string​ ​ at​ ​ a ​ ​ particular​ ​ position (default​ ​ is​ ​ 1).
+
+
   let str = "This is a sample string";
   let pos = 3;
   let insertstr = "Insert me";
@@ -325,6 +379,9 @@ function monthsDiff(d1, d2) {
 
 
 /*12
+Write​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ chop​ ​ a ​ ​ string​ ​into​ ​ chunks​ ​ of​ ​ a ​ ​ given​ ​ length.
+
+
 function chunkSubstr(str, size) {
     const numChunks = Math.ceil(str.length / size)
     const chunks = [];
@@ -349,6 +406,8 @@ function chunkSubstr(str, size) {
 
 
 /*13
+ Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ print​​ an​ ​ integer​ ​ with​ ​ commas​ ​ as​ ​ thousands​ ​ separators.
+
 
 let input="1023165454197";
 const pos=3;
@@ -375,6 +434,9 @@ alert(input);
 
 
 /*14
+Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ print​​ array​ ​ of​ ​ object​ ​ in​ ​ ascending​ ​ order​ ​ of​ ​ age, & descending​ ​ order​ ​ of​ ​ name.​ ​ Make​ ​ array​ ​ of​ ​ object​ ​ with​ ​ three​ ​ fields​ ​which are​​:
+
+
   let array=[{ id:1 ,name: "smit", age: 21 },
          { id:2 ,name: "keval", age: 22 },
          { id:3 ,name: "manish", age: 23 }]
@@ -424,6 +486,9 @@ alert(input);
 
 
 /*15
+Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ delete​ ​ particular​ ​object​ ​ from​ ​ array​ ​ and​ ​ add​ ​ new​ ​ object​ ​ at particular​ ​ position. Also if the position does not exist then error message should be shown to the user.
+
+
 let action;
 while(true)
     {
